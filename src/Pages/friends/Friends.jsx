@@ -66,10 +66,10 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useSelector } from 'react-redux';
 import Navbar from '../navbar/Navbar';
-import ThemeToggle from '../../utils/themeToggle.jsx'; // Adjust the import path as necessary
+import ThemeToggle from '../../utils/themeToggle.jsx'; 
 
 const Friends = () => {
-  const [friends, setFriends] = useState([]); // Ensuring friends is initialized as an empty array
+  const [friends, setFriends] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const theme = useSelector((state) => state.theme.theme);
@@ -82,7 +82,6 @@ const Friends = () => {
           headers: { Authorization: `Bearer ${token}` },
         });
 
-        // Ensure that we set an array, even if the response data is undefined or null
         setFriends(Array.isArray(response.data) ? response.data : []);
       } catch (err) {
         setError('Failed to load friends.');
@@ -96,7 +95,7 @@ const Friends = () => {
   return (
     <div className={`${theme === 'dark' ? 'bg-gray-900 text-white' : 'bg-gray-100 text-black'} min-h-screen w-screen p-6`}>
       <Navbar />
-      <ThemeToggle /> {/* Add the ThemeToggle button here */}
+      <ThemeToggle /> 
       <div className="container mx-auto">
         <h1 className="text-3xl font-bold text-center mb-6">Friends List</h1>
 

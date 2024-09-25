@@ -37,13 +37,12 @@ const Dashboard = () => {
     fetchUserData();
   }, []);
 
-  // Parse and format last login date correctly
   const formatLastLogin = (lastLogin) => {
     const date = new Date(lastLogin);
     if (!isNaN(date.getTime())) {
-      return date.toLocaleString(); // Customize formatting as needed
+      return date.toLocaleString(); 
     }
-    return 'N/A'; // Fallback in case of invalid date
+    return 'N/A';
   };
 
   return (
