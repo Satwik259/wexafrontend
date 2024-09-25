@@ -107,7 +107,7 @@ export const loginUser = createAsyncThunk(
   "auth/login",
   async (data, { rejectWithValue }) => {
     try {
-      const response = await Url.post("/users/login", data, {
+      const response = await Url.post("/api/v1/users/login", data, {
         // withCredentials: true,
       });
       return response.data;
