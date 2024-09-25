@@ -75,11 +75,24 @@ const authSlice = createSlice({
 export const { setUser } = authSlice.actions;
 export default authSlice.reducer;
 
+// export const registerUser = createAsyncThunk(
+//   "auth/register",
+//   async (data, { rejectWithValue }) => {
+//     try {
+//       const response = await Url.post("/users/register", data, {
+//         withCredentials: true,
+//       });
+//       return response.data;
+//     } catch (error) {
+//       return rejectWithValue(error.response.data);
+//     }
+//   }
+// );
 export const registerUser = createAsyncThunk(
   "auth/register",
   async (data, { rejectWithValue }) => {
     try {
-      const response = await Url.post("/users/register", data, {
+      const response = await Url.post("/api/v1/users/register", data, { 
         withCredentials: true,
       });
       return response.data;
@@ -88,6 +101,7 @@ export const registerUser = createAsyncThunk(
     }
   }
 );
+
 
 export const loginUser = createAsyncThunk(
   "auth/login",
