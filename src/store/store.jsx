@@ -14,8 +14,8 @@ import themeReducer from "../feautures/theme/themeSlice";
 
 const store = configureStore({
   reducer: {
-    auth: authSlice,        // Auth slice reducer
-    theme: themeReducer,    // Theme slice reducer
+    auth: authSlice,       
+    theme: themeReducer,   
   },
 });
 
